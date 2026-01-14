@@ -1,0 +1,14 @@
+data/
+results/
+outputs/
+*.zip
+*.tar.gz
+
+__pycache__/
+*.pyc
+.venv/
+env/
+.env
+
+.ipynb_checkpoints/
+.DS_Store
