@@ -25,3 +25,22 @@ python 01_noise_pipeline_full_with_freq_v2.py \
   --null subject \
   --alpha 0.01 \
   --tail low
+
+## Dynamic modeling of clonotype trajectories
+
+The script `02_dynamics_gbm_ou.py` performs dynamic modeling of clonotype
+frequency trajectories derived from the denoised outputs of the noise pipeline.
+
+It compares Geometric Brownian Motion (GBM) and Ornstein–Uhlenbeck (OU)
+models in log-frequency space, at the subject level, and reports
+model comparison metrics (log-likelihood, AIC, BIC).
+
+Optionally, the OU model can be refined by stratifying transitions
+into frequency bins, with bootstrap-based confidence intervals.
+
+### Example
+```bash
+python 02_dynamics_gbm_ou.py \
+  --results-dir results \
+  --null subject \
+  --alpha 0.01
